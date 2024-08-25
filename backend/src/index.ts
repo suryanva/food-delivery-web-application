@@ -11,9 +11,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/test", (req: Request, res: Response) => {
-  res.send("Hello World!");
-});
+import userRouter from "./routes/user.route";
+
+app.use("/api/v1/users", userRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
