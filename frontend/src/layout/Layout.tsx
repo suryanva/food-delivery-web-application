@@ -4,13 +4,14 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 type Props = {
   children: React.ReactNode;
+  showHero?: boolean;
 };
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children, showHero = false }: Props) => {
   return (
     <div className="layout">
       <Header />
-      <Hero />
+      {showHero && <Hero />}
       <div className="container mx-auto flex-1 py-10">{children}</div>
       <Footer />
     </div>
