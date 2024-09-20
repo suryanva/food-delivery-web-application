@@ -11,6 +11,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/health", async (req: Request, res: Response) => {
+  res.send({
+    message: "Health OK!",
+  });
+});
+
 import userRouter from "./routes/user.route";
 
 app.use("/api/v1/users", userRouter);
